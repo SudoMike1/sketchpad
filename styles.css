@@ -1,0 +1,33 @@
+
+body {
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+button {
+    flex: 0 1 100px;
+    padding: 0 50px;
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    
+    /* This is the key change to eliminate the large horizontal space */
+    justify-content: flex-start;
+    
+    /* This is the key change to eliminate the large vertical space */
+    align-items: flex-start; 
+    
+    gap: 0;
+    border: solid black 2px;
+}
+
+
+/* .box:hover {
+    background-color: black;
+} */
