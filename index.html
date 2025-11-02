@@ -7,11 +7,31 @@
     <title>Sketchpad</title>
 </head>
 <body>
+    <div class="top-section">
+    <h1 class="title"> Welcome to the Sketchpad</h1>
+    <h3>Show your creativity by sketching whatever you like :)</h3>
+    </div>
     <button id="reset-button">New drawing</button>
+    <div id="mid-section">
+    <div class="toggle">
+        <h4>Enable random colors</h4>
+        <label class="switch">
+            <input id="random-colors" type="checkbox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <div class="toggle">
+    <h4>Enable more precision</h4>
+    <label class="switch">
+        <input id="opacity" type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    </div>
+    </div>
     <div class="container">
 
     </div>
 
-    <script src="logic.js"></script>
+    <script src="logic.js" defer></script>
 </body>
 </html>

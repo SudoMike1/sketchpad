@@ -5,29 +5,120 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
+    gap: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 57, 57, 0.5);
 }
 button {
-    flex: 0 1 100px;
-    padding: 0 50px;
+    padding: 20px 50px;
     border-radius: 8px;
+    font-weight: bold;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    
-    /* This is the key change to eliminate the large horizontal space */
     justify-content: flex-start;
-    
-    /* This is the key change to eliminate the large vertical space */
     align-items: flex-start; 
-    
     gap: 0;
     border: solid black 2px;
 }
 
+.top-section {
+    display: flex;
+    flex-direction: column;
+    
+}
+.title {
+    text-align: center;
+    font-size: clamp(30px , 10vh, 60px);
+    margin-bottom: 5px;
+    margin-top: 100px;
+}
+h3 {
+    text-align: center;
+    color: rgb(88, 88, 88);
+    margin: 0;
+}
+#mid-section {
+    display: flex;
+    gap: 4rem;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
 
-/* .box:hover {
-    background-color: black;
-} */
+.toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container{
+    margin-bottom: 200px;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #8bb15f;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #8bb15f;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

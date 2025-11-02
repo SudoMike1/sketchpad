@@ -1,8 +1,8 @@
 const container = document.querySelector(".container");
 
 
-container.style.height = "960px";
-container.style.width = "960px"; 
+container.style.height = "800px";
+container.style.width = "800px"; 
 
 function createCanvas(numberOfSquares) {
     console.log('i am inside a function');
@@ -30,21 +30,34 @@ function createCanvas(numberOfSquares) {
         
         fragment.appendChild(box); 
         
+        
         box.addEventListener("mouseenter" , () => {
-            const currentColor = box.style.backgroundColor;
-            console.log(currentColor); 
-            box.style.backgroundColor = "black";
+            const toggle1 = document.getElementById("random-colors");
+            if (toggle1.checked){
+                box.style.backgroundColor = getRandomColor();
+            } else {
+                const currentColor = box.style.backgroundColor;
+                console.log(currentColor); 
+                box.style.backgroundColor = "black";
+            }
         });
     }
     
     container.appendChild(fragment);
 }
 
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 
 const button = document.querySelector("#reset-button")
 
 button.addEventListener("click" , () => {
-    // CRITICAL FIX 4: prompt returns a string; use parseInt()
+    
     let userInput = parseInt(prompt("How many squares per side for the new grid"));
     
     if (userInput > 0) {
@@ -58,3 +71,5 @@ button.addEventListener("click" , () => {
         alert("Please enter a positive number.");
     }
 });
+
+createCanvas(900);
