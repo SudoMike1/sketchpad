@@ -1,8 +1,18 @@
 const container = document.querySelector(".container");
 
+let isDrawing = false;
 
 container.style.height = "800px";
 container.style.width = "800px"; 
+
+container.addEventListener('mousedown', () => {
+    isDrawing = true;
+});
+
+document.addEventListener('mouseup', () => {
+    isDrawing = false;
+});
+
 
 function createCanvas(numberOfSquares) {
     console.log('i am inside a function');
@@ -33,12 +43,15 @@ function createCanvas(numberOfSquares) {
         
         box.addEventListener("mouseenter" , () => {
             const toggle1 = document.getElementById("random-colors");
-            if (toggle1.checked){
-                box.style.backgroundColor = getRandomColor();
-            } else {
-                const currentColor = box.style.backgroundColor;
-                console.log(currentColor); 
-                box.style.backgroundColor = "black";
+
+            if (isDrawing){
+                if (toggle1.checked){
+                    box.style.backgroundColor = getRandomColor();
+                } else {
+                    const currentColor = box.style.backgroundColor;
+                    console.log(currentColor); 
+                    box.style.backgroundColor = "black";
+                }
             }
         });
     }
